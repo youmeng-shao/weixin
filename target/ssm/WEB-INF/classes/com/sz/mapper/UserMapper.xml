@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.sz.mapper.UserMapper">
+
+    <resultMap id="userMap" type="com.sz.pojo.User">
+        <id property="openId" column="openId"/>
+        <result property="tableId" column="tableId"/>
+        <result property="totalPrice" column="totalPrice"/>
+        <collection property="menus" ofType="com.sz.pojo.Menu">
+            <id property="menuId" column="menuId"/>
+            <result property="menuName" column="menuName"/>
+        </collection>
+        <collection property="count" ofType="com.sz.pojo.Counts">
+            <id property="countId" column="countId"/>
+            <result property="num" column="num"/>
+        </collection>
+    </resultMap>
+
+
+
+    <insert id="insertQueueUser" parameterType="com.sz.pojo.User">
+        INSERT INTO USER(openId, tableId, totalPrice)
+            VALUES(#{openId}, #{tableId}, #{totalPrice})
+    </insert>
+
+    <insert id="insertUserWithMenus">
+        insert into user_menu(uid, meid, num)
+            values (#{openId}, #{menuId}, #{num})
+    </insert>
+
+    <select id="selectAllUser" resultMap="userMap">
+        SELECT u.*, m.menuId, m.menuName, um.num, um.countId FROM menu m
+	        LEFT OUTER JOIN user_menu um ON m.menuId = um.meid
+	        LEFT OUTER JOIN USER u ON u.openId = um.uid
+		        WHERE NOT ISNULL(u.openId)
+    </select>
+
+    <delete id="deleteUserAndMenuByopenId">
+        DELETE FROM user_menu WHERE uid=#{openId}
+    </delete>
+
+    <select id="selectTableIdByopenId" resultType="java.lang.Integer">
+        SELECT tableId FROM USER WHERE openId=#{openId}
+    </select>
+
+    <delete id="deleteUserByopenId">
+        DELETE FROM USER WHERE openId=#{openId}
+    </delete>
+
+</mapper>

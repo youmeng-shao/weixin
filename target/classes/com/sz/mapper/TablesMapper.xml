@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.sz.mapper.TablesMapper">
+
+    <insert id="saveTable" parameterType="com.sz.pojo.Tables">
+        INSERT INTO TABLES(innerTable, categoryId, state)
+        VALUES(#{innerTable}, #{categoryId}, #{state})
+    </insert>
+
+    <select id="selectById" resultType="com.sz.pojo.Tables">
+        SELECT * FROM TABLES
+        <where>
+            tableId=#{tableId}
+        </where>
+    </select>
+
+    <update id="updetaTables" parameterType="com.sz.pojo.Tables">
+        UPDATE TABLES
+        <set>
+            innerTable=#{innerTable},
+            categoryId=#{categoryId},
+            state=#{state}
+        </set>
+        <where>
+            tableId=#{tableId}
+        </where>
+    </update>
+
+    <delete id="deleteBytableId">
+        DELETE FROM TABLES
+        <where>
+            tableId=#{tableId}
+        </where>
+    </delete>
+
+    <select id="selectAll" resultType="com.sz.pojo.Tables">
+        SELECT * FROM TABLES
+    </select>
+
+    <select id="selectTablesByCategoryId" resultType="com.sz.pojo.Tables">
+        SELECT * FROM TABLES
+            <where>
+                categoryId = #{categoryId} and state=0 LIMIT 1
+            </where>
+
+    </select>
+
+    <update id="updetaTablesState">
+        UPDATE TABLES SET state=1 WHERE tableId = #{tableId}
+    </update>
+
+    <update id="updateCurrentTableIdState">
+        UPDATE TABLES SET state=0 WHERE tableId = #{currentTableId}
+    </update>
+
+</mapper>

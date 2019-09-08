@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    	 http://www.springframework.org/schema/beans/spring-beans.xsd
+     	 http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/tx
+     	 http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+
+
+<!--    启动注解，只要controller注解-->
+    <context:component-scan base-package="com.sz">
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
+
+<!--    视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+<!--    文件上传id必须取名multipartResolver,注册我们的文件上传解析器-->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="540000000"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+
+    </bean>
+
+
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

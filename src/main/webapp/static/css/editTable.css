@@ -1,0 +1,34 @@
+input{
+    width: 80px;
+    margin-left: 7px;
+    margin-right: 23px;
+}
+#saveTable-button{
+    margin-right: 23px;
+    background-color: skyblue;
+    text-align: center;
+    width: 80px;
+    border-radius: 7px;
+}
+#back-button{
+    background-color: skyblue;
+    text-align: center;
+    width: 80px;
+    border-radius: 7px;
+}
+#back-button:hover{
+    background-color: cornflowerblue;
+    transition: 0.3s;
+}
+#saveTable-button:hover{
+    background-color: cornflowerblue;
+    transition: 0.3s;
+}
+#select-category {
+    margin-left: 7px;
+    margin-right: 23px;
+}
+#select-state {
+    margin-left: 7px;
+    margin-right: 23px;
+}

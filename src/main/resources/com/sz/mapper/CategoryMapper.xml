@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.sz.mapper.CategoryMapper">
+
+    <update id="insertCategoryCountById">
+        UPDATE category SET counts=counts+1
+        <where>
+            categoryId = #{categoryId}
+        </where>
+    </update>
+
+    <update id="deleteCategoryCountById">
+        UPDATE category SET counts=counts-1
+        <where>
+            categoryId = #{categoryId}
+        </where>
+    </update>
+
+    <select id="selectCategoryById" resultType="com.sz.pojo.Category">
+        SELECT * FROM category
+            <where>
+                categoryId=#{categoryId}
+            </where>
+    </select>
+
+</mapper>

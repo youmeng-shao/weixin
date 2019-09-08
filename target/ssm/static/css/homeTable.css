@@ -1,0 +1,48 @@
+.table-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.add-container{
+    margin-left: 800px;
+    /* margin-top: 100px;  */
+}
+
+#addTables-btn{
+    background-color: skyblue;
+    text-align: center;
+    width: 80px;
+    border-radius: 7px;
+}
+#addTables-btn:hover{
+    background-color: cornflowerblue;
+    transition: 0.3s;
+}
+#restu-table{
+    /* border,用于设置元素的边框，solid表示实线，1px表示边框线宽，black是边框颜色 */
+    border: solid 1px black;
+
+    /* table和td之间以及td和td之间默认边框是分离的，所以看起来像双边框，可以通过边框折叠样式改为单边框 */
+    border-collapse: collapse;
+
+    /* table是块元素，可以设置宽高(但是一般都不设置高度)，如果不设置宽高，则宽高被内容td撑开。如果设置了宽，则按照设置的宽显示，并且如果其中的td没有设置宽高的话，同一行td会按照内容长度等比例分配table的宽度 */
+    width: 600px;
+}
+#restu-table td{
+    border: solid 1px black;
+    text-align: center;
+}
+#restu-table th{
+    border: solid 1px black;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+#operator{
+    display: inline;
+
+}
+#operator a{
+    margin-left: 10px;
+}

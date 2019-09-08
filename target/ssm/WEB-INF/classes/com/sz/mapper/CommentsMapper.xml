@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.sz.mapper.CommentsMapper">
+
+    <insert id="insertComments" parameterType="com.sz.pojo.Comments">
+        insert into comments( openId, nickName,avatarUrl, review)
+            values ( #{openId}, #{nickName}, #{avatarUrl}, #{review})
+    </insert>
+
+    <select id="selectAllUserComments" resultType="com.sz.pojo.Comments">
+        select * from comments order by commentId desc
+    </select>
+</mapper>

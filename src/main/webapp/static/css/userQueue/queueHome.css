@@ -1,0 +1,92 @@
+
+
+
+.user-menus-container{
+    width: 800px;
+    /* 高度不设置 */
+    /* height: 500px; */
+    border: 1px solid black;
+    margin:auto;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+.user-menus-item{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    /* 高度不设置，最后删除 */
+    /* height: 150px; */
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.item-left{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+.item-right{
+    width: 25%;
+    /* border-left: 1px solid black; */
+
+}
+
+.left-top{
+    display: flex;
+    flex-direction: row;
+    /* border-bottom: 1px solid black; */
+    height: 50px;
+    margin-bottom: 10px;
+}
+.user-tableId{
+    height: 100%;
+    width: 200px;
+    margin-left: 50px;
+    /* border: 1px solid black; */
+    font-size: 18px;
+}
+.user-totalMoney{
+    height: 100%;
+    width: 100px;
+    margin-left: 20px;
+    /* border: 1px solid black; */
+    font-size: 18px;
+}
+
+.left-bottom{
+    margin-bottom: 10px;
+}
+#restu-table{
+    width: 100%;
+}
+
+.next-user{
+    margin-top: 8%;
+    border-radius: 10px;
+    background-color: #2db7f5;
+    border: #2db7f5;
+}
+.next-user p{
+    font-size: 20px;
+    letter-spacing: 7px;
+}
+
+#pages-container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 24%;
+}
+#pages-container p{
+    margin-right: 40px;
+    letter-spacing: 5px;
+}
+td{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #87ceeb;
+    text-align: center;
+}
+
+

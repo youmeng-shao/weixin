@@ -1,0 +1,37 @@
+#menu-name{
+    width: 80px;
+    margin-left: 7px;
+    margin-right: 20px;
+}
+#menu-file{
+    width: 180px;
+}
+#menu-price{
+    width: 80px;
+    margin-left: 3px;
+    margin-right: 20px;
+}
+#select-statue{
+    margin-right: 20px;
+}
+#editMenu-button{
+    margin-right: 23px;
+    background-color: skyblue;
+    text-align: center;
+    width: 80px;
+    border-radius: 7px;
+}
+#back-button{
+    background-color: skyblue;
+    text-align: center;
+    width: 80px;
+    border-radius: 7px;
+}
+#back-button:hover{
+    background-color: cornflowerblue;
+    transition: 0.3s;
+}
+#editMenu-button:hover{
+    background-color: cornflowerblue;
+    transition: 0.3s;
+}
