@@ -12,4 +12,10 @@ public class RedisUtil {
             System.out.print("我是master");
         }
 
+        // dev 开发的
+        public void dev_function() {
+
+        }
+
+
 }
